@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:3306;databaseName=TasteFind;encrypt=true;trustServerCertificate=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/TasteFind";
     private static final String USER = "root"; //"Hagila\\חגילה";
     private static final String PASSWORD = "147963";
 

@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.example.SQL.Create;
 import org.example.SQL.InCreate;
+import org.example.SQL.Insert;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -18,10 +19,16 @@ public class Main {
             System.out.println("❌ Connection failed: " + e.getMessage());
         }
 
-        Create.createTableUser("Users");
-        Create.createTableRecipes("Recipes");
-        Create.createTableIngredients("Ingredients");
-        Create.createTableRecipeIngredients("RecipeIngredients");
+        //יצירת טבלאות
+//        Create.createTableUser("Users");
+//        Create.createTableRecipes("Recipes");
+//        Create.createTableIngredients("Ingredients");
+//        Create.createTableRecipeIngredients("RecipeIngredients");
+
+        //הכנסה לטבלה - בדיקה
+//        Insert.insertTableIngredients("סוכר");
+
+
 
 
     }
