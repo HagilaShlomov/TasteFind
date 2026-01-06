@@ -1,33 +1,34 @@
 package org.example.Controllers;
 
+import lombok.AllArgsConstructor;
 import org.example.Entity.User;
 import org.example.Services.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
-    // יצירת משתמש
     @PostMapping("/create")
-    public ResponseEntity<String> createUser(@RequestBody User user) {
+    public ResponseEntity<?> createUser(@RequestBody User user) {
         try {
-            userService.createUser(user);
-            return ResponseEntity.ok("User created successfully");
+            User savedUser = userService.createUser(user);
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
         } catch (IllegalArgumentException e) {
-            // מחזיר שגיאה 400 (Bad Request) עם הודעת השגיאה מה-Service
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Integer id) {
-        return userService.getUserById(id);
+    public ResponseEntity<Object> getUser(@RequestBody Integer id) {
+        User user = userService.getUserById(id);
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(user);
     }
 }

@@ -12,11 +12,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void createUser(User user) {
+    public User createUser(User user) {
         if (userRepository.existsByEmail(user.getEmail())) throw new IllegalArgumentException("Email already exists");
         if (userRepository.existsByUsername(user.getUsername())) throw new IllegalArgumentException("Username already exists");
 
         userRepository.save(user);
+        return user;
     }
 
     public User getUserById(Integer id) {

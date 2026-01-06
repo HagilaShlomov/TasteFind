@@ -7,12 +7,7 @@ import java.sql.Statement;
 public class Create implements InCreate {
 
     public static void createTableUser(String tableName) throws SQLException {
-        // בדיקה לשם תקין בלבד
-        if (!tableName.matches("[A-Za-z0-9_]+")) {
-            throw new IllegalArgumentException("Invalid table name");
-        }
 
-        // בניית שאילתה
         String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                 + "id INT PRIMARY KEY AUTO_INCREMENT, "
                 + "username VARCHAR(50) UNIQUE NOT NULL, "
@@ -21,7 +16,7 @@ public class Create implements InCreate {
                 + "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
                 + ")";
 
-        // שימוש במחלקת החיבור שלך
+
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 
@@ -31,12 +26,7 @@ public class Create implements InCreate {
     }
 
     public static void createTableRecipes(String tableName) throws SQLException {
-        // בדיקה לשם תקין בלבד
-        if (!tableName.matches("[A-Za-z0-9_]+")) {
-            throw new IllegalArgumentException("Invalid table name");
-        }
 
-        // בניית שאילתה
         String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                 + "id INT PRIMARY KEY AUTO_INCREMENT, "
                 + "userId INT NOT NULL,"
@@ -50,7 +40,7 @@ public class Create implements InCreate {
                 + "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
                 + ")";
 
-        // שימוש במחלקת החיבור שלך
+
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 
@@ -60,19 +50,14 @@ public class Create implements InCreate {
     }
 
     public static void createTableIngredients(String tableName) throws SQLException {
-        // בדיקה לשם תקין בלבד
-        if (!tableName.matches("[A-Za-z0-9_]+")) {
-            throw new IllegalArgumentException("Invalid table name");
-        }
 
-        // בניית שאילתה
         String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                 + "id INT PRIMARY KEY AUTO_INCREMENT, "
                 + "name  VARCHAR(100) UNIQUE NOT NULL,"
                 + "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
                 + ")";
 
-        // שימוש במחלקת החיבור שלך
+
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 
@@ -82,12 +67,7 @@ public class Create implements InCreate {
     }
 
     public static void createTableRecipeIngredients(String tableName) throws SQLException {
-        // בדיקה לשם תקין בלבד
-        if (!tableName.matches("[A-Za-z0-9_]+")) {
-            throw new IllegalArgumentException("Invalid table name");
-        }
 
-        // בניית שאילתה
         String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                 + "id INT PRIMARY KEY AUTO_INCREMENT, "
                 + "recipeId INT NOT NULL, "
@@ -98,7 +78,7 @@ public class Create implements InCreate {
                 + "position INT"
                 + ")";
 
-        // שימוש במחלקת החיבור שלך
+
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 

@@ -12,7 +12,6 @@ import java.util.List;
 public interface RecipeIngredientRepository extends JpaRepository<RecipeIngredient, Integer> {
 
     List<RecipeIngredient> findByRecipeId(Recipe recipe);
-    // לבדוק אם מרכיב כבר קיים במתכון
     boolean existsByRecipeIdAndIngredientId(Recipe recipe, Ingredient ingredient);
 
 }
