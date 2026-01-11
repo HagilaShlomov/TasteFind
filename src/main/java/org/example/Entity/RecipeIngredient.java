@@ -6,7 +6,6 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 @ToString
 @Entity
 @Table(name = "recipe_ingredients")

@@ -1,21 +1,29 @@
 package org.example.SQL;
+import org.hibernate.annotations.processing.SQL;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+@Service
 public class Delete {
 
+    private static DataSource dataSource;
+    @Autowired
+    public Delete(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public static void dropTable(String tableName) throws SQLException {
-        // בדיקה לשם תקין בלבד
         if (!tableName.matches("[A-Za-z0-9_]+")) {
             throw new IllegalArgumentException("Invalid table name");
         }
 
-        // בניית שאילתה למחיקת הטבלה
         String sql = "DROP TABLE IF EXISTS " + tableName;
 
-        // שימוש במחלקת החיבור שלך
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement()) {
 
             stmt.execute(sql);
@@ -27,7 +35,7 @@ public class Delete {
     public static void delTableUsers(){
         try {
             Delete.dropTable("Users");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -35,7 +43,7 @@ public class Delete {
     public static void delTableRecipes(){
         try {
             Delete.dropTable("Recipes");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -43,7 +51,7 @@ public class Delete {
     public static void delTableIngredients(){
         try {
             Delete.dropTable("Ingredients");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -51,7 +59,7 @@ public class Delete {
     public static void delTableRecipeIngredients(){
         try {
             Delete.dropTable("RecipeIngredients");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

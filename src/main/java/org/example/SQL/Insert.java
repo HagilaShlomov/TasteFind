@@ -1,17 +1,26 @@
 package org.example.SQL;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-
+@Service
 public class Insert {
+
+    private static DataSource dataSource;
+    @Autowired
+    public Insert(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public static void insertTableUser(String username, String email, String passwordHash) throws SQLException {
 
         String sql = "INSERT INTO Users (username, email, passwordHash) VALUES (?, ?, ?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, username);
@@ -30,7 +39,7 @@ public class Insert {
         String sql = "INSERT INTO Recipes (userId, title, shortDescription, instructions, prepTimeMinutes, isPublic) "
                 + "VALUES (?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
@@ -55,7 +64,7 @@ public class Insert {
 
         String sql = "INSERT INTO Ingredients (name) VALUES (?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, name);
@@ -72,7 +81,7 @@ public class Insert {
         String sql = "INSERT INTO RecipeIngredients (recipeId, ingredientId, quantity, position) "
                 + "VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, recipeId);

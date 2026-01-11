@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
-
     List<Recipe> findByUserId(User user);
 
     List<Recipe> findByTitleContaining(String keyword);

@@ -1,24 +1,22 @@
 package org.example.Controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.AllArgsConstructor;
 import org.example.DTO.LoginRequest;
-import org.example.DTO.LogoutRequest;
 import org.example.Entity.User;
 import org.example.Services.LogInService;
-import org.example.Services.LogOutService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/authService")
 public class LogInController {
 
     private final LogInService logInService;
-
-    public LogInController(LogInService logInService) {
-        this.logInService = logInService;
-    }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {

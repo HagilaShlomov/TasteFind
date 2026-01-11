@@ -10,8 +10,8 @@ import java.util.List;
 
 @Repository
 public interface RecipeIngredientRepository extends JpaRepository<RecipeIngredient, Integer> {
-
     List<RecipeIngredient> findByRecipeId(Recipe recipe);
+
     boolean existsByRecipeIdAndIngredientId(Recipe recipe, Ingredient ingredient);
 
 }
