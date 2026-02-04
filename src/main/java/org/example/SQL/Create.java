@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 @Service
-public class Create implements InCreate {
+public class Create{
     private static DataSource dataSource;
 
     @Autowired
@@ -109,7 +109,6 @@ public class Create implements InCreate {
 
 
 
-    @Override
     public void createUserTable() {
         try {
             Create.createTableUser();
@@ -118,7 +117,6 @@ public class Create implements InCreate {
         }
     }
 
-    @Override
     public void createRecipesTable() {
         try {
             Create.createTableRecipes();
@@ -127,7 +125,6 @@ public class Create implements InCreate {
         }
     }
 
-    @Override
     public void createIngredientsTable() {
         try {
             Create.createTableIngredients();
@@ -136,7 +133,6 @@ public class Create implements InCreate {
         }
     }
 
-    @Override
     public void createRecInTable() {
         try {
             Create.createTableRecipeIngredients();

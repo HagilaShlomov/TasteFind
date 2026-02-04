@@ -6,18 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5e271ac8-1ffe-43fb-81c0-17db367d64ab" name="Changes" comment="update changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTO/LogoutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTO/LogoutRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entity/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entity/RecipeIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Repositories/RecipeIngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Repositories/RecipeIngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Repositories/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Repositories/RecipeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SQL/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SQL/Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SQL/DatabaseConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SQL/Delete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SQL/Delete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SQL/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SQL/Insert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SQL/InCreate.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +77,8 @@
       <updated>1767603541891</updated>
       <workItem from="1767603543069" duration="7277000" />
       <workItem from="1767683820867" duration="694000" />
-      <workItem from="1768129824263" duration="2113000" />
+      <workItem from="1768129824263" duration="2499000" />
+      <workItem from="1770192329632" duration="1293000" />
     </task>
     <task id="LOCAL‎-00001" summary="update changes">
       <option name="closed" value="true" />
@@ -97,7 +88,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1767683872975</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="update changes">
+      <option name="closed" value="true" />
+      <created>1768133015440</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1768133015440</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
