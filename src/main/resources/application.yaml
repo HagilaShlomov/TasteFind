@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: TasteFind
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/TasteFind
+    username: root
+    password: 147963
+
+server:
+  port: 8080
